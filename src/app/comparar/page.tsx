@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+﻿import { Suspense } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import CabecalhoAurea from "@/components/layout/CabecalhoAurea";
 import { imoveis, formatarPreco } from "@/data/imoveis";
@@ -12,7 +13,7 @@ type Props = {
   searchParams: Promise<{ imoveis?: string | string[] }>;
 };
 
-export default async function PaginaComparar({ searchParams }: Props) {
+async function ConteudoComparacao({ searchParams }: Props) {
   const params = await searchParams;
   const valor = typeof params.imoveis === "string" ? params.imoveis : "";
 
@@ -121,5 +122,26 @@ export default async function PaginaComparar({ searchParams }: Props) {
         </p>
       </section>
     </main>
+  );
+}
+
+export default function PaginaComparar({ searchParams }: Props) {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-[#F5F2EC] text-[#171C1A]">
+          <div className="mx-auto max-w-7xl px-6 py-24">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#927C5B]">
+              AUREA Private Collection
+            </p>
+            <h1 className="mt-6 font-serif text-5xl">
+              Preparando sua comparação...
+            </h1>
+          </div>
+        </main>
+      }
+    >
+      <ConteudoComparacao searchParams={searchParams} />
+    </Suspense>
   );
 }

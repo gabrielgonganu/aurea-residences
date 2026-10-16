@@ -7,6 +7,7 @@ import { useState } from "react";
 const links = [
   { nome: "Início", href: "/" },
   { nome: "Propriedades", href: "/imoveis" },
+  { nome: "Comparar", href: "/comparar" },
   { nome: "Nossa essência", href: "/#sobre" },
   { nome: "Contato", href: "/#contato" },
 ];
@@ -120,3 +121,4 @@ export default function CabecalhoAurea() {
     </header>
   );
 }
+
