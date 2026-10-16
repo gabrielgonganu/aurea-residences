@@ -84,18 +84,65 @@ export default function CatalogoImoveis() {
     return lista;
   }, [busca, estado, tipo, ordem, mostrarFavoritos, favoritos]);
 
+  useEffect(() => {
+    const carregarComparacao = () => {
+      try {
+        const salvos = JSON.parse(
+          localStorage.getItem("aurea:comparacao:v1") || "[]"
+        );
+
+        if (Array.isArray(salvos)) {
+          const validos = Array.from(
+            new Set(
+              salvos.filter(
+                (slug): slug is string =>
+                  typeof slug === "string" &&
+                  imoveis.some((imovel) => imovel.slug === slug)
+              )
+            )
+          ).slice(0, 3);
+
+          setSelecionadosComparacao(validos);
+        }
+      } catch {
+        // Ignora dados invalidos ou armazenamento indisponivel.
+      }
+    };
+
+    const id = window.setTimeout(carregarComparacao, 0);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  function salvarComparacao(slugs: string[]) {
+    setSelecionadosComparacao(slugs);
+
+    try {
+      localStorage.setItem(
+        "aurea:comparacao:v1",
+        JSON.stringify(slugs)
+      );
+    } catch {
+      // A selecao continua disponivel durante a sessao.
+    }
+  }
+
   function alternarComparacao(slug: string) {
-    setSelecionadosComparacao((atuais) => {
-      if (atuais.includes(slug)) {
-        return atuais.filter((item) => item !== slug);
-      }
+    if (selecionadosComparacao.includes(slug)) {
+      salvarComparacao(
+        selecionadosComparacao.filter((item) => item !== slug)
+      );
+      return;
+    }
 
-      if (atuais.length >= 3) {
-        return atuais;
-      }
+    if (selecionadosComparacao.length >= 3) {
+      return;
+    }
 
-      return [...atuais, slug];
-    });
+    salvarComparacao([...selecionadosComparacao, slug]);
+  }
+
+  function limparComparacao() {
+    salvarComparacao([]);
   }
   function limparFiltros() {
     setBusca("");
@@ -352,7 +399,7 @@ export default function CatalogoImoveis() {
             <div className="flex flex-wrap gap-3">
               <button
                 type="button"
-                onClick={() => setSelecionadosComparacao([])}
+                onClick={limparComparacao}
                 className="border border-white/30 px-5 py-4 text-xs uppercase tracking-wider"
               >
                 Limpar
@@ -370,6 +417,7 @@ export default function CatalogoImoveis() {
     </main>
   );
 }
+
 
 
 
