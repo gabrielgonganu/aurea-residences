@@ -52,9 +52,9 @@ export const imoveis: Imovel[] = [
     area: 480,
     suites: 4,
     vagas: 5,
-    imagem: null,
+    imagem: "/imoveis/penthouse-mirante-do-vale/fachada.png",
     descricao: "Uma experiência exclusiva acima da paisagem urbana.",
-    disponivelNoSite: false,
+    disponivelNoSite: true,
   },
   {
     slug: "reserva-das-acacias",
@@ -106,5 +106,6 @@ export const formatarPreco = (valor: number) =>
     currency: "BRL",
     maximumFractionDigits: 0,
   }).format(valor);
+
 
 
