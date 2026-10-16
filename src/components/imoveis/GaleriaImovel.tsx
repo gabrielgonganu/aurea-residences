@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type Foto = { src: string; alt: string; ambiente: string };
 
-export default function GaleriaImovel({ fotos }: { fotos: Foto[] }) {
+export default function GaleriaImovel({ fotos, nomeImovel = "Villa Serra Dourada", edicao = "001" }: { fotos: Foto[]; nomeImovel?: string; edicao?: string }) {
   const [ativa, setAtiva] = useState<number | null>(null);
   const fecharRef = useRef<HTMLButtonElement>(null);
   const gatilhoRef = useRef<HTMLButtonElement | null>(null);
@@ -63,15 +63,15 @@ export default function GaleriaImovel({ fotos }: { fotos: Foto[] }) {
           ))}
         </div>
         <div className="aurea-gallery-v3-bottom">
-          <span>Villa Serra Dourada <span className="text-[#b9a079]">✦</span> Acervo arquitetônico</span>
+          <span>{nomeImovel} <span className="text-[#b9a079]">✦</span> Acervo arquitetônico</span>
           <button type="button" onClick={(e) => abrir(0, e.currentTarget)}>Explorar as {total} fotografias <span aria-hidden>↗</span></button>
         </div>
       </div>
 
       {ativa !== null && (
-        <div id="aurea-lightbox" role="dialog" aria-modal="true" aria-label="Galeria cinematográfica da Villa Serra Dourada" className="aurea-lightbox">
+        <div id="aurea-lightbox" role="dialog" aria-modal="true" aria-label={`Galeria cinematográfica de ${nomeImovel}`} className="aurea-lightbox">
           <header className="aurea-lightbox-header">
-            <div><div className="font-serif text-2xl tracking-[.20em]">AUREA</div><span className="text-[10px] uppercase tracking-[.3em] text-[#c5ae86]">Private collection · 001</span></div>
+            <div><div className="font-serif text-2xl tracking-[.20em]">AUREA</div><span className="text-[10px] uppercase tracking-[.3em] text-[#c5ae86]">Private collection · {edicao}</span></div>
             <div className="text-center text-xs uppercase tracking-[.24em] text-white/65 hidden sm:block">{fotos[ativa].ambiente}</div>
             <button ref={fecharRef} type="button" className="aurea-lightbox-close" onClick={() => setAtiva(null)} aria-label="Fechar galeria">Fechar <span aria-hidden>×</span></button>
           </header>
@@ -94,3 +94,4 @@ export default function GaleriaImovel({ fotos }: { fotos: Foto[] }) {
     </>
   );
 }
+

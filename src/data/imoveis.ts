@@ -38,9 +38,9 @@ export const imoveis: Imovel[] = [
     area: 410,
     suites: 4,
     vagas: 4,
-    imagem: null,
+    imagem: "/imoveis/casa-lagoa-prime/fachada.png",
     descricao: "Leveza, sofisticação e integração com a natureza.",
-    disponivelNoSite: false,
+    disponivelNoSite: true,
   },
   {
     slug: "penthouse-mirante-do-vale",
@@ -106,3 +106,5 @@ export const formatarPreco = (valor: number) =>
     currency: "BRL",
     maximumFractionDigits: 0,
   }).format(valor);
+
+
