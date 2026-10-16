@@ -1,4 +1,5 @@
-﻿import ExperienciaImersiva from "@/components/imoveis/ExperienciaImersiva";
+﻿import CabecalhoAurea from "@/components/layout/CabecalhoAurea";
+import ExperienciaImersiva from "@/components/imoveis/ExperienciaImersiva";
 import PainelAtendimento from "@/components/imoveis/PainelAtendimento";
 import MotionEnhancer from "@/components/ui/MotionEnhancer";
 import type { Metadata } from "next";
@@ -47,30 +48,7 @@ export default function VillaSerraDourada() {
   return (
     <main className="aurea-property min-h-screen bg-[#F5F2EC] text-[#171C1A]">
       <MotionEnhancer />
-      <header className="border-b border-[#171C1A]/10 bg-[#171C1A] text-white">
-        <div className="mx-auto flex min-h-24 max-w-7xl items-center justify-between gap-5 px-6 lg:px-10">
-          <Link href="/" className="flex flex-col">
-            <span className="font-serif text-3xl tracking-[0.22em]">
-              AUREA
-            </span>
-            <span className="mt-1 text-[9px] tracking-[0.4em]">
-              RESIDENCES
-            </span>
-          </Link>
-
-          <nav className="flex items-center gap-6 text-[10px] uppercase tracking-[0.15em] md:gap-10">
-            <Link href="/#colecao" className="hover:text-[#C5AE86]">
-              Coleção
-            </Link>
-            <Link href="/#sobre" className="hidden hover:text-[#C5AE86] sm:block">
-              Nossa essência
-            </Link>
-            <Link href="#contato" className="hover:text-[#C5AE86]">
-              Contato
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <CabecalhoAurea />
 
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 lg:px-10">
         <nav
@@ -239,6 +217,7 @@ export default function VillaSerraDourada() {
     </main>
   );
 }
+
 
 
 

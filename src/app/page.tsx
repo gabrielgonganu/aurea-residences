@@ -1,33 +1,11 @@
-﻿import Image from "next/image";
+﻿import CabecalhoAurea from "@/components/layout/CabecalhoAurea";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F3F0E9] text-[#171C1A]">
-      <header className="absolute left-0 top-0 z-20 w-full border-b border-white/20 text-white">
-        <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
-          <Link href="/" className="flex flex-col">
-            <span className="font-serif text-3xl tracking-[0.22em]">
-              AUREA
-            </span>
-            <span className="text-[9px] tracking-[0.4em]">
-              RESIDENCES
-            </span>
-          </Link>
-
-          <div className="hidden items-center gap-10 text-xs uppercase tracking-[0.18em] md:flex">
-            <Link href="#colecao" className="hover:text-[#D6BE96]">
-              Propriedades
-            </Link>
-            <Link href="#sobre" className="hover:text-[#D6BE96]">
-              Nossa essência
-            </Link>
-            <Link href="#contato" className="hover:text-[#D6BE96]">
-              Contato
-            </Link>
-          </div>
-        </nav>
-      </header>
+      <CabecalhoAurea />
 
       <section className="relative flex min-h-[850px] items-center overflow-hidden bg-[#171C1A] text-white">
         <Image
@@ -182,5 +160,6 @@ export default function Home() {
     </main>
   );
 }
+
 
 

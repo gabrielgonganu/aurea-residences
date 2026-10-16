@@ -1,5 +1,7 @@
 ﻿"use client";
 
+import CabecalhoAurea from "@/components/layout/CabecalhoAurea";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -14,6 +16,7 @@ export default function CatalogoImoveis() {
   const [ordem, setOrdem] = useState("padrao");
   const [favoritos, setFavoritos] = useState<string[]>([]);
   const [mostrarFavoritos, setMostrarFavoritos] = useState(false);
+  const [selecionadosComparacao, setSelecionadosComparacao] = useState<string[]>([]);
   const [favoritosCarregados, setFavoritosCarregados] = useState(false);
 
   useEffect(() => {
@@ -81,6 +84,19 @@ export default function CatalogoImoveis() {
     return lista;
   }, [busca, estado, tipo, ordem, mostrarFavoritos, favoritos]);
 
+  function alternarComparacao(slug: string) {
+    setSelecionadosComparacao((atuais) => {
+      if (atuais.includes(slug)) {
+        return atuais.filter((item) => item !== slug);
+      }
+
+      if (atuais.length >= 3) {
+        return atuais;
+      }
+
+      return [...atuais, slug];
+    });
+  }
   function limparFiltros() {
     setBusca("");
     setEstado("Todos");
@@ -94,17 +110,7 @@ export default function CatalogoImoveis() {
 
   return (
     <main className="min-h-screen bg-[#F5F2EC] text-[#171C1A]">
-      <header className="bg-[#171C1A] text-white">
-        <nav className="mx-auto flex min-h-24 max-w-7xl items-center justify-between px-6">
-          <Link href="/" className="flex flex-col">
-            <span className="font-serif text-3xl tracking-[0.22em]">AUREA</span>
-            <span className="text-[9px] tracking-[0.4em]">RESIDENCES</span>
-          </Link>
-          <Link href="/" className="text-xs uppercase tracking-[0.17em] hover:text-[#D6BE96]">
-            Voltar ao início ↗
-          </Link>
-        </nav>
-      </header>
+      <CabecalhoAurea />
 
       <section className="border-b border-[#D8D1C4] px-6 pb-20 pt-20 md:pt-28">
         <div className="mx-auto max-w-7xl">
@@ -272,6 +278,18 @@ export default function CatalogoImoveis() {
                   </div>
 
                   <p className="mt-6 font-serif text-2xl">{formatarPreco(imovel.preco)}</p>
+                  <button
+                    type="button"
+                    onClick={() => alternarComparacao(imovel.slug)}
+                    disabled={
+                      selecionadosComparacao.length >= 3 &&
+                      !selecionadosComparacao.includes(imovel.slug)
+                    }
+                    aria-pressed={selecionadosComparacao.includes(imovel.slug)}
+                    className="mt-5 flex min-h-11 w-full items-center justify-center gap-2 border border-[#A58D67] px-4 text-xs uppercase tracking-widest transition hover:bg-[#E8DDC9] disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    {selecionadosComparacao.includes(imovel.slug) ? "✓ Selecionado" : "+ Comparar imóvel"}
+                  </button>
 
                   {imovel.disponivelNoSite ? (
                     <Link
@@ -301,9 +319,59 @@ export default function CatalogoImoveis() {
           </p>
         </div>
       </footer>
+      {selecionadosComparacao.length > 0 && (
+        <aside
+          aria-label="Imóveis selecionados para comparação"
+          className="fixed inset-x-0 bottom-0 z-50 border-t border-[#C5AE86] bg-[#171C1A] px-5 py-5 text-white shadow-2xl"
+        >
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[#C5AE86]">
+                AUREA · Comparação
+              </p>
+              <p className="mt-2 font-serif text-xl">
+                {selecionadosComparacao.length} de 3 residências selecionadas
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {selecionadosComparacao.map((slug) => {
+                  const imovel = imoveis.find((item) => item.slug === slug);
+                  return (
+                    <button
+                      key={slug}
+                      type="button"
+                      onClick={() => alternarComparacao(slug)}
+                      aria-label={`Remover ${imovel?.nome || slug} da comparação`}
+                      className="border border-white/30 px-3 py-2 text-xs hover:border-[#C5AE86]"
+                    >
+                      {imovel?.nome || slug} ×
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => setSelecionadosComparacao([])}
+                className="border border-white/30 px-5 py-4 text-xs uppercase tracking-wider"
+              >
+                Limpar
+              </button>
+              <Link
+                href={`/comparar?imoveis=${selecionadosComparacao.join(",")}`}
+                className="bg-[#C5AE86] px-6 py-4 text-center text-xs font-medium uppercase tracking-wider text-[#171C1A] transition hover:bg-[#DDCAA8]"
+              >
+                Comparar agora ↗
+              </Link>
+            </div>
+          </div>
+        </aside>
+      )}
     </main>
   );
 }
+
+
 
 
 
