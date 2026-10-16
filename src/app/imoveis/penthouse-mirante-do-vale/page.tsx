@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+﻿import PainelAtendimento from "@/components/imoveis/PainelAtendimento";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CabecalhoAurea from "@/components/layout/CabecalhoAurea";
@@ -116,6 +117,8 @@ export default function PenthouseMiranteDoVale() {
             </p>
           </div>
         </div>
+
+        <PainelAtendimento nomeImovel="Penthouse Mirante do Vale" preco={imovel.preco} />
 
         <GaleriaImovel
           fotos={fotos}
@@ -268,3 +271,4 @@ export default function PenthouseMiranteDoVale() {
     </main>
   );
 }
+

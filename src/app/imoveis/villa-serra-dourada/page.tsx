@@ -1,4 +1,5 @@
-﻿import CabecalhoAurea from "@/components/layout/CabecalhoAurea";
+﻿import { imoveis as catalogoImoveis } from "@/data/imoveis";
+import CabecalhoAurea from "@/components/layout/CabecalhoAurea";
 import ExperienciaImersiva from "@/components/imoveis/ExperienciaImersiva";
 import PainelAtendimento from "@/components/imoveis/PainelAtendimento";
 import MotionEnhancer from "@/components/ui/MotionEnhancer";
@@ -45,6 +46,13 @@ const diferenciais = [
 ];
 
 export default function VillaSerraDourada() {
+  const imovelVilla = catalogoImoveis.find(
+    (item) => item.slug === "villa-serra-dourada"
+  );
+
+  if (!imovelVilla) {
+    throw new Error("Villa Serra Dourada nao encontrada no catalogo.");
+  }
   return (
     <main className="aurea-property min-h-screen bg-[#F5F2EC] text-[#171C1A]">
       <MotionEnhancer />
@@ -94,7 +102,7 @@ export default function VillaSerraDourada() {
 
         <GaleriaImovel fotos={fotos} />
         <ExperienciaImersiva />
-        <PainelAtendimento />
+        <PainelAtendimento nomeImovel="Villa Serra Dourada" preco={imovelVilla.preco} />
 
         {/* Assinatura editorial */}
         <div className="aurea-editorial-band">
@@ -217,6 +225,7 @@ export default function VillaSerraDourada() {
     </main>
   );
 }
+
 
 
 

@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+﻿import PainelAtendimento from "@/components/imoveis/PainelAtendimento";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -155,6 +156,8 @@ export default function CasaLagoaPrime() {
             </p>
           </div>
         </div>
+
+        <PainelAtendimento nomeImovel="Casa Lagoa Prime" preco={imovel.preco} />
 
         <GaleriaImovel
           fotos={fotos}
@@ -319,3 +322,4 @@ export default function CasaLagoaPrime() {
     </main>
   );
 }
+
