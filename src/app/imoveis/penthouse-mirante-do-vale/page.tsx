@@ -17,37 +17,37 @@ const base = "/imoveis/penthouse-mirante-do-vale";
 
 const fotos = [
   {
-    src: `${base}/fachada.png`,
+    src: `${base}/fachada.webp`,
     ambiente: "Cobertura",
     alt: "Penthouse no topo de um edifício com vista urbana ao entardecer",
   },
   {
-    src: `${base}/sala-estar.png`,
+    src: `${base}/sala-estar.webp`,
     ambiente: "Living",
     alt: "Living sofisticado com mobiliário azul-marinho e marcenaria escura",
   },
   {
-    src: `${base}/sala-jantar.png`,
+    src: `${base}/sala-jantar.webp`,
     ambiente: "Sala de jantar",
     alt: "Sala de jantar elegante com iluminação indireta e pedra escura",
   },
   {
-    src: `${base}/cozinha.png`,
+    src: `${base}/cozinha.webp`,
     ambiente: "Cozinha",
     alt: "Cozinha contemporânea com ilha de pedra escura",
   },
   {
-    src: `${base}/jacuzzi.png`,
+    src: `${base}/jacuzzi.webp`,
     ambiente: "Jacuzzi",
     alt: "Ambiente de spa com jacuzzi e revestimentos em mármore",
   },
   {
-    src: `${base}/quarto.png`,
+    src: `${base}/quarto.webp`,
     ambiente: "Quarto principal",
     alt: "Quarto principal com iluminação acolhedora e acabamento sofisticado",
   },
   {
-    src: `${base}/quarto-comum.png`,
+    src: `${base}/quarto-comum.webp`,
     ambiente: "Quarto secundário",
     alt: "Quarto secundário contemporâneo com decoração em tons neutros",
   },
@@ -190,7 +190,7 @@ export default function PenthouseMiranteDoVale() {
         className="relative isolate flex min-h-[580px] items-center overflow-hidden bg-[#14191B] text-white md:min-h-[700px]"
       >
         <Image
-          src={`${base}/fachada.png`}
+          src={`${base}/fachada.webp`}
           alt="Cobertura da Penthouse Mirante do Vale iluminada ao entardecer"
           fill
           sizes="100vw"
@@ -271,4 +271,5 @@ export default function PenthouseMiranteDoVale() {
     </main>
   );
 }
+
 

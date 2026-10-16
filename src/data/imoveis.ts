@@ -24,7 +24,7 @@ export const imoveis: Imovel[] = [
     area: 620,
     suites: 5,
     vagas: 6,
-    imagem: "/imoveis/villa-serra-dourada/entrada-varanda.png",
+    imagem: "/imoveis/villa-serra-dourada/entrada-varanda.webp",
     descricao: "Arquitetura contemporânea em harmonia com as montanhas.",
     disponivelNoSite: true,
   },
@@ -38,7 +38,7 @@ export const imoveis: Imovel[] = [
     area: 410,
     suites: 4,
     vagas: 4,
-    imagem: "/imoveis/casa-lagoa-prime/fachada.png",
+    imagem: "/imoveis/casa-lagoa-prime/fachada.webp",
     descricao: "Leveza, sofisticação e integração com a natureza.",
     disponivelNoSite: true,
   },
@@ -52,7 +52,7 @@ export const imoveis: Imovel[] = [
     area: 480,
     suites: 4,
     vagas: 5,
-    imagem: "/imoveis/penthouse-mirante-do-vale/fachada.png",
+    imagem: "/imoveis/penthouse-mirante-do-vale/fachada.webp",
     descricao: "Uma experiência exclusiva acima da paisagem urbana.",
     disponivelNoSite: true,
   },
@@ -106,6 +106,7 @@ export const formatarPreco = (valor: number) =>
     currency: "BRL",
     maximumFractionDigits: 0,
   }).format(valor);
+
 
 
 

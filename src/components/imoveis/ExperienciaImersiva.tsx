@@ -1,10 +1,10 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 export default function ExperienciaImersiva() {
   return (
     <section className="aurea-immersive" aria-labelledby="aurea-immersive-title" data-reveal>
       <div className="aurea-immersive-image">
-        <Image src="/imoveis/villa-serra-dourada/piscina.png" alt="Piscina de borda infinita integrada à arquitetura da Villa Serra Dourada" fill sizes="100vw" className="object-cover" />
+        <Image src="/imoveis/villa-serra-dourada/piscina.webp" alt="Piscina de borda infinita integrada à arquitetura da Villa Serra Dourada" fill sizes="100vw" className="object-cover" />
       </div>
       <div className="aurea-immersive-shade" />
       <div className="aurea-immersive-border" aria-hidden="true" />
@@ -18,3 +18,4 @@ export default function ExperienciaImersiva() {
     </section>
   );
 }
+

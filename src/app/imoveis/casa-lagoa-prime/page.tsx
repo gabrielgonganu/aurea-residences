@@ -18,62 +18,62 @@ const base = "/imoveis/casa-lagoa-prime";
 
 const fotos = [
   {
-    src: `${base}/fachada.png`,
+    src: `${base}/fachada.webp`,
     ambiente: "Fachada",
     alt: "Fachada da Casa Lagoa Prime com pedra clara, madeira e paisagismo tropical",
   },
   {
-    src: `${base}/piscina.png`,
+    src: `${base}/piscina.webp`,
     ambiente: "Piscina",
     alt: "Área externa com piscina integrada ao terraço e aos jardins",
   },
   {
-    src: `${base}/fachada-2.png`,
+    src: `${base}/fachada-2.webp`,
     ambiente: "Arquitetura",
     alt: "Outro ângulo da arquitetura contemporânea da residência",
   },
   {
-    src: `${base}/entrada.png`,
+    src: `${base}/entrada.webp`,
     ambiente: "Entrada",
     alt: "Entrada principal em madeira e pedra natural",
   },
   {
-    src: `${base}/cozinha.png`,
+    src: `${base}/cozinha.webp`,
     ambiente: "Cozinha",
     alt: "Cozinha com ilha central e acabamentos em pedra e madeira",
   },
   {
-    src: `${base}/suite.png`,
+    src: `${base}/suite.webp`,
     ambiente: "Suíte principal",
     alt: "Suíte principal com materiais naturais e vista para a paisagem",
   },
   {
-    src: `${base}/quarto.png`,
+    src: `${base}/quarto.webp`,
     ambiente: "Quarto",
     alt: "Quarto aconchegante com vista para o jardim tropical",
   },
   {
-    src: `${base}/sala-tv.png`,
+    src: `${base}/sala-tv.webp`,
     ambiente: "Sala de TV",
     alt: "Sala de televisão com painel de madeira e vista para o jardim",
   },
   {
-    src: `${base}/area-gourmet.png`,
+    src: `${base}/area-gourmet.webp`,
     ambiente: "Área gourmet",
     alt: "Área gourmet com churrasqueira integrada ao terraço",
   },
   {
-    src: `${base}/banheiro.png`,
+    src: `${base}/banheiro.webp`,
     ambiente: "Banheiro",
     alt: "Banheiro com banheira e revestimentos em pedra natural",
   },
   {
-    src: `${base}/escritorio.png`,
+    src: `${base}/escritorio.webp`,
     ambiente: "Escritório",
     alt: "Escritório com mobiliário contemporâneo e iluminação natural",
   },
   {
-    src: `${base}/sauna.png`,
+    src: `${base}/sauna.webp`,
     ambiente: "Sauna",
     alt: "Sauna com acabamento em madeira e jardim reservado",
   },
@@ -234,7 +234,7 @@ export default function CasaLagoaPrime() {
         className="relative isolate flex min-h-[560px] items-center overflow-hidden bg-[#171C1A] text-white md:min-h-[680px]"
       >
         <Image
-          src={`${base}/piscina.png`}
+          src={`${base}/piscina.webp`}
           alt="Piscina e terraço tropical da Casa Lagoa Prime"
           fill
           sizes="100vw"
@@ -322,4 +322,5 @@ export default function CasaLagoaPrime() {
     </main>
   );
 }
+
 

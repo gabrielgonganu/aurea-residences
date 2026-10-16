@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 const base = "/imoveis/villa-serra-dourada";
 
 const fotos = [
-  { src: `${base}/entrada-varanda.png`, ambiente: "Arquitetura", alt: "Fachada contemporânea da Villa Serra Dourada" },
-  { src: `${base}/piscina.png`, ambiente: "Piscina", alt: "Piscina de borda infinita com vista para as montanhas" },
-  { src: `${base}/sala-estar.png`, ambiente: "Living", alt: "Sala de estar com pé-direito duplo" },
-  { src: `${base}/cozinha.png`, ambiente: "Cozinha", alt: "Cozinha gourmet com ilha central" },
-  { src: `${base}/quarto.png`, ambiente: "Suíte principal", alt: "Suíte principal com vista panorâmica" },
-  { src: `${base}/banheiro.png`, ambiente: "Banheiro", alt: "Banheiro principal revestido em pedra natural" },
-  { src: `${base}/escritorio.png`, ambiente: "Escritório", alt: "Home office privativo com vista para as montanhas" },
-  { src: `${base}/garagem.png`, ambiente: "Garagem", alt: "Garagem de alto padrão da residência" },
+  { src: `${base}/entrada-varanda.webp`, ambiente: "Arquitetura", alt: "Fachada contemporânea da Villa Serra Dourada" },
+  { src: `${base}/piscina.webp`, ambiente: "Piscina", alt: "Piscina de borda infinita com vista para as montanhas" },
+  { src: `${base}/sala-estar.webp`, ambiente: "Living", alt: "Sala de estar com pé-direito duplo" },
+  { src: `${base}/cozinha.webp`, ambiente: "Cozinha", alt: "Cozinha gourmet com ilha central" },
+  { src: `${base}/quarto.webp`, ambiente: "Suíte principal", alt: "Suíte principal com vista panorâmica" },
+  { src: `${base}/banheiro.webp`, ambiente: "Banheiro", alt: "Banheiro principal revestido em pedra natural" },
+  { src: `${base}/escritorio.webp`, ambiente: "Escritório", alt: "Home office privativo com vista para as montanhas" },
+  { src: `${base}/garagem.webp`, ambiente: "Garagem", alt: "Garagem de alto padrão da residência" },
 ];
 
 const caracteristicas = [
@@ -225,6 +225,7 @@ export default function VillaSerraDourada() {
     </main>
   );
 }
+
 
 
 

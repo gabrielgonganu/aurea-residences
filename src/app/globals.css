@@ -240,7 +240,7 @@ body {
 .aurea-cinematic-image {
   position: absolute;
   inset: 0;
-  background-image: url("/imoveis/villa-serra-dourada/piscina.png");
+  background-image: url("/imoveis/villa-serra-dourada/piscina.webp");
   background-position: center;
   background-size: cover;
   animation: aureaCinematicZoom 18s ease-in-out infinite alternate;
@@ -378,4 +378,5 @@ body {
 @keyframes aurea-drift { from {transform:scale(1)} to {transform:scale(1.085)} }
 @media(max-width:767px) { .aurea-gallery-v3-grid {grid-template-columns:1fr 1fr;grid-template-rows:260px 150px;} .aurea-gallery-v3-main {grid-column:span 2;grid-row:span 1;} .aurea-gallery-v3-bottom {align-items:flex-start;flex-direction:column;line-height:1.8;} .aurea-gallery-v3-tag {bottom:15px;left:15px;padding:8px;font-size:9px;} .aurea-gallery-v3-frame {inset:9px;} .aurea-immersive {min-height:590px;} .aurea-immersive-content {padding:70px 35px 110px;} .aurea-immersive-border {inset:12px;} .aurea-immersive-footer {left:35px;right:35px;bottom:34px;font-size:8px;} .aurea-contact-widget {bottom:12px;right:12px;} .aurea-contact-trigger {padding:12px 14px;gap:9px;} .aurea-lightbox-thumb {width:58px;height:42px;} }
 @media(prefers-reduced-motion:reduce) { .aurea-immersive-image img {animation:none!important;} .aurea-gallery-v3-tile img,.aurea-gallery-v3-frame {transition:none!important;} .aurea-gallery-v3-tile:hover img {transform:none;} }
+
 

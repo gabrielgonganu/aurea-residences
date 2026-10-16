@@ -9,7 +9,7 @@ export default function Home() {
 
       <section className="relative flex min-h-[850px] items-center overflow-hidden bg-[#171C1A] text-white">
         <Image
-          src="/imoveis/villa-serra-dourada/piscina.png"
+          src="/imoveis/villa-serra-dourada/piscina.webp"
           alt="Piscina de borda infinita da Villa Serra Dourada"
           fill
           priority
@@ -100,7 +100,7 @@ export default function Home() {
           <Link href="/imoveis/villa-serra-dourada" className="group block max-w-4xl">
             <div className="relative aspect-[16/10] overflow-hidden bg-[#E8E4DC]">
               <Image
-                src="/imoveis/villa-serra-dourada/entrada-varanda.png"
+                src="/imoveis/villa-serra-dourada/entrada-varanda.webp"
                 alt="Arquitetura da Villa Serra Dourada"
                 fill
                 sizes="(max-width: 768px) 100vw, 896px"
@@ -160,6 +160,7 @@ export default function Home() {
     </main>
   );
 }
+
 
 
 
