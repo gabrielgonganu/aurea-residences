@@ -80,9 +80,9 @@ export const imoveis: Imovel[] = [
     area: 520,
     suites: 5,
     vagas: 4,
-    imagem: null,
+    imagem: "/imoveis/maison-cote-verte/fachada.webp",
     descricao: "Design contemporâneo, luminosidade e elegância.",
-    disponivelNoSite: false,
+    disponivelNoSite: true,
   },
   {
     slug: "estancia-vale-do-sol",
@@ -106,6 +106,7 @@ export const formatarPreco = (valor: number) =>
     currency: "BRL",
     maximumFractionDigits: 0,
   }).format(valor);
+
 
 
 
