@@ -222,6 +222,7 @@ export default function CatalogoImoveis() {
                 <option>Casa</option>
                 <option>Cobertura</option>
                 <option>Casa de campo</option>
+            <option>Apartamento</option>
               </select>
             </label>
 
@@ -417,6 +418,7 @@ export default function CatalogoImoveis() {
     </main>
   );
 }
+
 
 
 

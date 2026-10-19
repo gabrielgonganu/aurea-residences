@@ -3,7 +3,7 @@
   nome: string;
   cidade: string;
   estado: "MG" | "ES" | "SP";
-  tipo: "Casa" | "Cobertura" | "Casa de campo";
+  tipo: "Casa" | "Cobertura" | "Casa de campo" | "Apartamento";
   preco: number;
   area: number;
   suites: number;
@@ -85,18 +85,18 @@ export const imoveis: Imovel[] = [
     disponivelNoSite: true,
   },
   {
-    slug: "estancia-vale-do-sol",
-    nome: "Estância Vale do Sol",
-    cidade: "Campos do Jordão",
-    estado: "SP",
-    tipo: "Casa de campo",
-    preco: 6100000,
-    area: 470,
+    slug: "patio-das-veredas",
+    nome: "Pátio das Veredas",
+    cidade: "Vespasiano",
+    estado: "MG",
+    tipo: "Apartamento",
+    preco: 4850000,
+    area: 325,
     suites: 4,
-    vagas: 5,
-    imagem: null,
-    descricao: "O encontro entre arquitetura serrana e conforto.",
-    disponivelNoSite: false,
+    vagas: 4,
+    imagem: "/imoveis/patio-das-veredas/fachada.webp",
+    descricao: "Novo lançamento de alto luxo inspirado nas brasilidades, com arquitetura autoral e áreas comuns exclusivas.",
+    disponivelNoSite: true,
   },
 ];
 
@@ -106,6 +106,8 @@ export const formatarPreco = (valor: number) =>
     currency: "BRL",
     maximumFractionDigits: 0,
   }).format(valor);
+
+
 
 
 
