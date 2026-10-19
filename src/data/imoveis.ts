@@ -66,9 +66,9 @@ export const imoveis: Imovel[] = [
     area: 540,
     suites: 5,
     vagas: 6,
-    imagem: null,
+    imagem: "/imoveis/reserva-das-acacias/fachada.webp",
     descricao: "Um refúgio de arquitetura autoral e tranquilidade.",
-    disponivelNoSite: false,
+    disponivelNoSite: true,
   },
   {
     slug: "maison-cote-verte",
@@ -106,6 +106,7 @@ export const formatarPreco = (valor: number) =>
     currency: "BRL",
     maximumFractionDigits: 0,
   }).format(valor);
+
 
 
 
