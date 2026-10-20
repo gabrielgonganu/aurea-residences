@@ -41,7 +41,7 @@ export default function CabecalhoAurea() {
           href="/"
           onClick={() => setAberto(false)}
           className="flex flex-col"
-          aria-label="AUREA Residences — Início"
+          aria-label="AUREA RESIDENCES — Início"
         >
           <span className="font-serif text-3xl tracking-[0.22em]">
             AUREA
