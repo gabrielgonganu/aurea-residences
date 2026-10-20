@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aurea.dataminddigital.com.br"),
   title: {
     default: "AUREA Residences | Arquitetura e residências singulares",
     template: "%s | AUREA Residences",
