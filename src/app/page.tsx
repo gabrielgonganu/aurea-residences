@@ -510,115 +510,102 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="historias-de-viver"
-        className="bg-[#F2ECE2] px-6 py-24 text-[#171C1A] lg:px-10 lg:py-32"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-wrap items-end justify-between gap-8">
-            <div>
-              <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#92744F]">
-                Histórias de viver / Exemplos narrativos
-              </p>
-              <h2 className="max-w-3xl font-serif text-5xl leading-tight md:text-6xl">
-                A casa certa é aquela que faz sentido para você.
-              </h2>
+
+      <section id="historias-de-viver" aria-labelledby="aurea-v105-historias" className="relative isolate overflow-hidden bg-[#142A25] py-24 text-[#F8F4EC] lg:py-32">
+        <div aria-hidden="true" className="pointer-events-none absolute -right-28 top-0 h-[580px] w-[580px] rounded-full bg-[#C5AE86]/10 blur-[110px]" />
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="aurea-reveal grid gap-8 pb-12 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-8">
+              <p className="mb-6 text-xs uppercase tracking-[0.28em] text-[#D1B48B]">AUREA / Histórias possíveis</p>
+              <h2 id="aurea-v105-historias" className="max-w-4xl font-serif text-5xl leading-[1.08] md:text-7xl">Toda casa é cenário de <em className="font-normal text-[#D1B48B]">uma vida inteira.</em></h2>
             </div>
-            <p className="max-w-xs text-sm leading-7 text-[#6B6A62]">
-              Três perspectivas imaginadas para ilustrar necessidades
-              distintas de quem procura um novo lugar.
-            </p>
+            <p className="max-w-sm text-sm leading-8 text-white/70 lg:col-span-4">O que torna um endereço especial não está apenas na arquitetura. Está em tudo o que acontece dentro dela.</p>
           </div>
 
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                categoria: "01 / Refúgio",
-                titulo: "Uma vida mais perto da natureza",
-                texto: "Procurar silêncio, verde e tempo para estar junto pode mudar completamente o significado de morar.",
-                origem: "Cenário ilustrativo / Serra",
-              },
-              {
-                categoria: "02 / Movimento",
-                titulo: "A cidade como extensão de casa",
-                texto: "Para algumas pessoas, morar bem é ter cultura, encontros e possibilidades a poucos passos.",
-                origem: "Cenário ilustrativo / Cidade",
-              },
-              {
-                categoria: "03 / Pertencimento",
-                titulo: "Um espaço que traduz identidade",
-                texto: "Materiais, luz e memória afetiva transformam arquitetura em uma experiência profundamente pessoal.",
-                origem: "Cenário ilustrativo / Brasilidades",
-              },
-            ].map((historia) => (
-              <article
-                key={historia.categoria}
-                className="flex min-h-[330px] flex-col justify-between border border-[#171C1A]/15 bg-[#F9F6F0] p-8 transition-colors duration-300 hover:bg-white md:p-10"
-              >
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-[#92744F]">
-                    {historia.categoria}
-                  </p>
-                  <h3 className="mt-9 font-serif text-3xl leading-snug">
-                    {historia.titulo}
-                  </h3>
-                  <p className="mt-6 text-sm leading-8 text-[#666B65]">
-                    {historia.texto}
-                  </p>
+          <div className="grid gap-4 lg:grid-cols-12 lg:gap-5">
+            <article className="aurea-story-card aurea-reveal group relative min-h-[450px] overflow-hidden lg:col-span-7 lg:min-h-[690px]">
+              <Image src="/brand/aurea/viver/infancia-piscina.webp" alt="Família brincando com crianças e animais no jardim junto à piscina" fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover transition-transform duration-1000 group-hover:scale-[1.06]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071611]/90 via-[#071611]/15 to-transparent" />
+              <div className="absolute left-7 top-7 rounded-full border border-white/50 bg-black/20 px-4 py-2 text-[10px] uppercase tracking-[0.2em] backdrop-blur-sm">01 / Liberdade</div>
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-12">
+                <p className="mb-3 text-xs uppercase tracking-[0.22em] text-[#E1CCAA]">Quintais para descobrir o mundo</p>
+                <h3 className="max-w-md font-serif text-4xl leading-tight md:text-5xl">A infância merece espaço para acontecer.</h3>
+                <p className="mt-5 max-w-md text-sm leading-7 text-white/75">Correria no jardim, tardes à beira da piscina e a companhia de quem faz parte da família.</p>
+              </div>
+            </article>
+            <div className="grid gap-4 lg:col-span-5 lg:gap-5">
+              <article className="aurea-story-card aurea-reveal group relative min-h-[340px] overflow-hidden">
+                <Image src="/brand/aurea/viver/encontros-festa.webp" alt="Amigos diversos celebrando juntos em uma sala de estar" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover transition-transform duration-1000 group-hover:scale-[1.06]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071611]/90 via-transparent to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
+                  <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[#E1CCAA]">02 / Encontros</p>
+                  <h3 className="font-serif text-3xl leading-tight md:text-4xl">Uma sala cheia de histórias.</h3>
                 </div>
-                <p className="mt-12 border-t border-[#171C1A]/15 pt-5 text-[11px] uppercase tracking-[0.16em] text-[#8A8174]">
-                  {historia.origem}
-                </p>
               </article>
-            ))}
+              <article className="aurea-story-card aurea-reveal group relative min-h-[340px] overflow-hidden">
+                <Image src="/brand/aurea/viver/afetos-cafe.webp" alt="Menina levando café da manhã para suas duas mães na cama" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover transition-transform duration-1000 group-hover:scale-[1.06]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071611]/90 via-transparent to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
+                  <p className="mb-2 text-xs uppercase tracking-[0.22em] text-[#E1CCAA]">03 / Afeto</p>
+                  <h3 className="font-serif text-3xl leading-tight md:text-4xl">O extraordinário mora nos pequenos gestos.</h3>
+                </div>
+              </article>
+            </div>
           </div>
-          <p className="mt-6 text-xs leading-6 text-[#746E64]">
-            Conteúdo demonstrativo e fictício. Estes relatos são cenários criativos,
-            não depoimentos ou avaliações de clientes reais.
-          </p>
+          <p className="mt-7 max-w-3xl text-xs leading-6 text-white/55">Cenas e personagens ilustrativos, criados para este projeto conceitual. Não representam clientes ou depoimentos reais.</p>
         </div>
       </section>
 
-      <section className="bg-[#E6E0D5] px-6 py-24 text-[#171C1A] lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#92744F]">
-                Uma jornada, muitas possibilidades
-              </p>
-              <h2 className="font-serif text-5xl leading-tight md:text-6xl">
-                Sua próxima história começa com uma descoberta.
-              </h2>
-            </div>
-            <p className="max-w-sm text-sm leading-8 text-[#686D65] lg:col-span-5 lg:justify-self-end">
-              Explore os imóveis, selecione seus favoritos e compare
-              alternativas usando as ferramentas do catálogo AUREA.
-            </p>
+      <section id="jornada-aurea" aria-labelledby="aurea-jornada-titulo" className="relative overflow-hidden bg-[#C5AE86] text-[#171C1A]">
+        <div className="grid lg:grid-cols-12">
+          <div className="relative min-h-[390px] overflow-hidden lg:order-2 lg:col-span-5 lg:min-h-[780px]">
+            <Image src="/imoveis/patio-das-veredas/fachada.webp" alt="Fachada de arquitetura brasileira do imóvel Pátio das Veredas" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
+            <p className="absolute bottom-7 left-7 right-7 text-xs uppercase tracking-[0.25em] text-white">Descobrir / Selecionar / Comparar</p>
           </div>
-          <div className="mt-14 grid gap-6 border-t border-[#171C1A]/20 pt-10 md:grid-cols-3">
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#92744F]">01 / Descobrir</p>
-              <h3 className="mt-5 font-serif text-3xl">Explore a coleção</h3>
-              <p className="mt-4 text-sm leading-7 text-[#686D65]">Encontre residências por características e estilo de vida.</p>
-              <Link href="/imoveis" className="mt-7 inline-flex gap-4 border-b border-[#171C1A] pb-2 text-xs uppercase tracking-[0.14em] hover:text-[#92744F]">Ver imóveis <span aria-hidden="true">↗</span></Link>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#92744F]">02 / Selecionar</p>
-              <h3 className="mt-5 font-serif text-3xl">Encontre afinidades</h3>
-              <p className="mt-4 text-sm leading-7 text-[#686D65]">Salve seus favoritos no catálogo para revisitá-los depois.</p>
-              <Link href="/imoveis" className="mt-7 inline-flex gap-4 border-b border-[#171C1A] pb-2 text-xs uppercase tracking-[0.14em] hover:text-[#92744F]">Selecionar favoritos <span aria-hidden="true">↗</span></Link>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#92744F]">03 / Comparar</p>
-              <h3 className="mt-5 font-serif text-3xl">Escolha com clareza</h3>
-              <p className="mt-4 text-sm leading-7 text-[#686D65]">Compare até três propriedades lado a lado.</p>
-              <Link href="/comparar" className="mt-7 inline-flex gap-4 border-b border-[#171C1A] pb-2 text-xs uppercase tracking-[0.14em] hover:text-[#92744F]">Abrir comparador <span aria-hidden="true">↗</span></Link>
+          <div className="aurea-reveal flex flex-col justify-center px-6 py-20 md:px-12 lg:col-span-7 lg:px-[max(2.5rem,calc((100vw-80rem)/2))] lg:py-28">
+            <p className="mb-7 text-xs uppercase tracking-[0.3em]">Uma jornada / Muitas possibilidades</p>
+            <h2 id="aurea-jornada-titulo" className="max-w-2xl font-serif text-5xl leading-[1.1] md:text-6xl">Sua próxima história começa com uma <em className="font-normal text-[#415C4C]">descoberta.</em></h2>
+            <p className="mt-7 max-w-xl text-sm leading-8 text-[#39463C]">Três passos, ferramentas reais. Explore a coleção, guarde preferências e compare imóveis antes de decidir.</p>
+            <div className="mt-12 border-t border-[#171C1A]/35">
+              <Link href="/imoveis" className="aurea-journey-link group flex items-center gap-5 border-b border-[#171C1A]/25 py-6 transition-colors hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#171C1A]">
+                <span className="font-serif text-2xl">01</span><span className="flex-1"><strong className="block font-serif text-2xl font-normal">Explorar a coleção</strong><small className="mt-1 block text-sm">Encontre a arquitetura que combina com você.</small></span><span aria-hidden="true" className="text-2xl transition-transform group-hover:translate-x-1">↗</span>
+              </Link>
+              <Link href="/imoveis" className="aurea-journey-link group flex items-center gap-5 border-b border-[#171C1A]/25 py-6 transition-colors hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#171C1A]">
+                <span className="font-serif text-2xl">02</span><span className="flex-1"><strong className="block font-serif text-2xl font-normal">Guardar favoritos</strong><small className="mt-1 block text-sm">Crie sua seleção no catálogo.</small></span><span aria-hidden="true" className="text-2xl transition-transform group-hover:translate-x-1">↗</span>
+              </Link>
+              <Link href="/comparar" className="aurea-journey-link group flex items-center gap-5 border-b border-[#171C1A]/25 py-6 transition-colors hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#171C1A]">
+                <span className="font-serif text-2xl">03</span><span className="flex-1"><strong className="block font-serif text-2xl font-normal">Comparar com clareza</strong><small className="mt-1 block text-sm">Analise até três propriedades lado a lado.</small></span><span aria-hidden="true" className="text-2xl transition-transform group-hover:translate-x-1">↗</span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <footer
+      <section id="curadoria-aurea" aria-labelledby="curadoria-aurea-titulo" className="relative overflow-hidden bg-[#F5F2EC] py-24 text-[#171C1A] lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="aurea-reveal mb-14 grid gap-7 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-8"><p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#95734C]">AUREA / A arte da curadoria</p><h2 id="curadoria-aurea-titulo" className="max-w-3xl font-serif text-5xl leading-[1.1] md:text-7xl">Não escolhemos apenas imóveis. <em className="font-normal text-[#967C5A]">Escolhemos perspectivas.</em></h2></div>
+            <p className="max-w-sm text-sm leading-8 text-[#636B63] lg:col-span-4">Uma coleção guiada pelo encontro entre arquitetura, território e as muitas possibilidades de viver.</p>
+          </div>
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-stretch">
+            <div className="aurea-reveal relative min-h-[460px] overflow-hidden lg:col-span-5 lg:min-h-[730px]">
+              <Image src="/imoveis/villa-serra-dourada/entrada-varanda.webp" alt="Residência Villa Serra Dourada integrada à paisagem montanhosa" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+              <div className="absolute bottom-0 p-8 text-white md:p-10"><p className="text-xs uppercase tracking-[0.25em] text-[#E4D2B1]">A paisagem também escolhe</p><p className="mt-4 font-serif text-3xl leading-snug">Uma outra forma de olhar para cada endereço.</p></div>
+            </div>
+            <div className="grid gap-4 lg:col-span-7 md:grid-cols-2">
+              <article className="aurea-curadoria-tile aurea-reveal group flex min-h-[310px] flex-col justify-between bg-[#203D35] p-8 text-[#F5F2EC] md:p-10"><div><span className="text-xs tracking-[0.25em] text-[#D4BD94]">01 / IDENTIDADE</span><h3 className="mt-8 font-serif text-3xl">Arquitetura autoral</h3><p className="mt-5 text-sm leading-8 text-white/70">Materiais, proporções e personalidade: cada projeto com uma linguagem própria.</p></div><span aria-hidden="true" className="mt-8 self-end font-serif text-4xl text-[#D4BD94] transition-transform group-hover:translate-x-2">↗</span></article>
+              <article className="aurea-curadoria-tile aurea-reveal group flex min-h-[310px] flex-col justify-between bg-[#E2D3B9] p-8 md:p-10"><div><span className="text-xs tracking-[0.25em] text-[#6A4E2D]">02 / PERTENCIMENTO</span><h3 className="mt-8 font-serif text-3xl">Vida e encontros</h3><p className="mt-5 text-sm leading-8 text-[#4C4B3F]">Um endereço também precisa fazer sentido para quem vive ali, todos os dias.</p></div><span aria-hidden="true" className="mt-8 self-end font-serif text-4xl text-[#6A4E2D] transition-transform group-hover:translate-x-2">↗</span></article>
+              <article className="aurea-curadoria-tile aurea-reveal group flex min-h-[310px] flex-col justify-between bg-[#DCE1D6] p-8 md:p-10"><div><span className="text-xs tracking-[0.25em] text-[#38523D]">03 / TERRITÓRIO</span><h3 className="mt-8 font-serif text-3xl">Paisagens singulares</h3><p className="mt-5 text-sm leading-8 text-[#4D5C50]">Serra, cidade e litoral: o lugar e sua cultura fazem parte da experiência.</p></div><span aria-hidden="true" className="mt-8 self-end font-serif text-4xl text-[#38523D] transition-transform group-hover:translate-x-2">↗</span></article>
+              <article className="aurea-curadoria-tile aurea-reveal group flex min-h-[310px] flex-col justify-between bg-[#EEE5D9] p-8 md:p-10"><div><span className="text-xs tracking-[0.25em] text-[#866A45]">04 / DESCOBERTA</span><h3 className="mt-8 font-serif text-3xl">Escolhas com clareza</h3><p className="mt-5 text-sm leading-8 text-[#666459]">Filtros, favoritos e comparação para descobrir possibilidades com autonomia.</p></div><span aria-hidden="true" className="mt-8 self-end font-serif text-4xl text-[#866A45] transition-transform group-hover:translate-x-2">↗</span></article>
+            </div>
+          </div>
+          <div className="mt-12 flex flex-wrap items-center justify-between gap-7 border-t border-[#171C1A]/20 pt-8"><p className="max-w-xl text-xs leading-6 text-[#656A62]">Curadoria e áreas de atuação descritas de forma conceitual para um portfólio demonstrativo. A marca e seus imóveis são fictícios.</p><Link href="/imoveis" className="group inline-flex items-center gap-7 border-b border-[#171C1A] pb-3 text-xs uppercase tracking-[0.18em] hover:text-[#866A45] focus-visible:outline-2 focus-visible:outline-offset-4"><span>Explorar a coleção</span><span aria-hidden="true" className="transition-transform group-hover:translate-x-1">↗</span></Link></div>
+        </div>
+      </section>
+
+            <footer
         id="contato"
         className="bg-[#171C1A] px-6 py-16 text-white lg:px-10"
       >

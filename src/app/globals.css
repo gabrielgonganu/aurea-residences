@@ -380,3 +380,19 @@ body {
 @media(prefers-reduced-motion:reduce) { .aurea-immersive-image img {animation:none!important;} .aurea-gallery-v3-tile img,.aurea-gallery-v3-frame {transition:none!important;} .aurea-gallery-v3-tile:hover img {transform:none;} }
 
 
+
+
+/* AUREA V10.5 REDESIGN */
+.aurea-story-card img { will-change: auto; }
+.aurea-story-card:hover img { will-change: transform; }
+.aurea-curadoria-tile { transition: transform .45s ease, box-shadow .45s ease; }
+.aurea-curadoria-tile:hover { transform: translateY(-5px); box-shadow: 0 18px 35px rgba(23,28,26,.10); }
+@keyframes aurea-v105-rise { from { opacity: .45; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .aurea-reveal { animation: aurea-v105-rise 1s ease-out both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurea-reveal, .aurea-story-card img, .aurea-curadoria-tile, .aurea-journey-link * { animation: none !important; transition: none !important; transform: none !important; }
+}
