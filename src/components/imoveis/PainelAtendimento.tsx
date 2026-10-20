@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useId, useRef, useState } from "react";
 
@@ -27,10 +27,11 @@ export default function PainelAtendimento({
         setAberto(false);
       }
     };
+    const botaoDeOrigem = abrirPainelRef.current;
     window.addEventListener("keydown", fecharComEscape);
     return () => {
       window.removeEventListener("keydown", fecharComEscape);
-      abrirPainelRef.current?.focus();
+      botaoDeOrigem?.focus();
     };
   }, [aberto]);
 
