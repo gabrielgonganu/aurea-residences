@@ -396,3 +396,30 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .aurea-reveal, .aurea-story-card img, .aurea-curadoria-tile, .aurea-journey-link * { animation: none !important; transition: none !important; transform: none !important; }
 }
+
+
+/* AUREA V10.6 SIGNATURE */
+.aurea-signature-footer-glow {
+  background:
+    radial-gradient(circle at 85% 23%, rgba(197,174,134,.16), transparent 38%),
+    radial-gradient(circle at 10% 95%, rgba(100,141,118,.18), transparent 42%);
+}
+.aurea-footer-wordmark { font-size: clamp(5.2rem, 17vw, 17rem); }
+.aurea-footer-link {
+  display: inline-block;
+  text-underline-offset: .4em;
+  transition: color 250ms ease, transform 250ms ease;
+}
+.aurea-footer-link:hover { color: #D8BE92; transform: translateX(3px); }
+.aurea-footer-link:focus-visible { outline: 2px solid #D8BE92; outline-offset: 5px; }
+.aurea-footer-cta { transition: background-color 300ms ease, color 300ms ease, transform 300ms ease; }
+.aurea-footer-cta:hover { background-color: #C5AE86; color: #171C1A; transform: translateY(-3px); }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurea-footer-link, .aurea-footer-cta, .aurea-footer-cta * {
+    transition: none !important;
+    transform: none !important;
+  }
+}

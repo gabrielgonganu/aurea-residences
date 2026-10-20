@@ -1,6 +1,7 @@
 import CabecalhoAurea from "@/components/layout/CabecalhoAurea";
 import Image from "next/image";
 import Link from "next/link";
+import MotionEnhancer from "@/components/ui/MotionEnhancer";
 import { imoveis, formatarPreco } from "@/data/imoveis";
 
 export default function Home() {
@@ -26,7 +27,8 @@ export default function Home() {
     throw new Error("Dados da vitrine AUREA incompletos.");
   }
   return (
-    <main className="min-h-screen bg-[#F3F0E9] text-[#171C1A]">
+    <main id="inicio" className="min-h-screen bg-[#F3F0E9] text-[#171C1A]">
+      <MotionEnhancer />
       <CabecalhoAurea />
 
       <section className="relative flex min-h-[850px] items-center overflow-hidden bg-[#171C1A] text-white">
@@ -221,7 +223,7 @@ export default function Home() {
           <div className="mb-14 grid items-end gap-6 lg:grid-cols-12">
             <div className="lg:col-span-8">
               <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#947C58]">A vida acontece aqui / AUREA</p>
-              <h2 id="viver-aurea-titulo" className="max-w-4xl font-serif text-5xl leading-[1.09] md:text-7xl">
+              <h2 data-reveal id="viver-aurea-titulo" className="max-w-4xl font-serif text-5xl leading-[1.09] md:text-7xl">
                 Os melhores lugares guardam <em className="text-[#927B5C]">histórias.</em>
               </h2>
             </div>
@@ -517,7 +519,7 @@ export default function Home() {
           <div className="aurea-reveal grid gap-8 pb-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <p className="mb-6 text-xs uppercase tracking-[0.28em] text-[#D1B48B]">AUREA / Histórias possíveis</p>
-              <h2 id="aurea-v105-historias" className="max-w-4xl font-serif text-5xl leading-[1.08] md:text-7xl">Toda casa é cenário de <em className="font-normal text-[#D1B48B]">uma vida inteira.</em></h2>
+              <h2 data-reveal id="aurea-v105-historias" className="max-w-4xl font-serif text-5xl leading-[1.08] md:text-7xl">Toda casa é cenário de <em className="font-normal text-[#D1B48B]">uma vida inteira.</em></h2>
             </div>
             <p className="max-w-sm text-sm leading-8 text-white/70 lg:col-span-4">O que torna um endereço especial não está apenas na arquitetura. Está em tudo o que acontece dentro dela.</p>
           </div>
@@ -585,7 +587,7 @@ export default function Home() {
       <section id="curadoria-aurea" aria-labelledby="curadoria-aurea-titulo" className="relative overflow-hidden bg-[#F5F2EC] py-24 text-[#171C1A] lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="aurea-reveal mb-14 grid gap-7 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-8"><p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#95734C]">AUREA / A arte da curadoria</p><h2 id="curadoria-aurea-titulo" className="max-w-3xl font-serif text-5xl leading-[1.1] md:text-7xl">Não escolhemos apenas imóveis. <em className="font-normal text-[#967C5A]">Escolhemos perspectivas.</em></h2></div>
+            <div className="lg:col-span-8"><p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#95734C]">AUREA / A arte da curadoria</p><h2 data-reveal id="curadoria-aurea-titulo" className="max-w-3xl font-serif text-5xl leading-[1.1] md:text-7xl">Não escolhemos apenas imóveis. <em className="font-normal text-[#967C5A]">Escolhemos perspectivas.</em></h2></div>
             <p className="max-w-sm text-sm leading-8 text-[#636B63] lg:col-span-4">Uma coleção guiada pelo encontro entre arquitetura, território e as muitas possibilidades de viver.</p>
           </div>
           <div className="grid gap-8 lg:grid-cols-12 lg:items-stretch">
@@ -604,24 +606,68 @@ export default function Home() {
           <div className="mt-12 flex flex-wrap items-center justify-between gap-7 border-t border-[#171C1A]/20 pt-8"><p className="max-w-xl text-xs leading-6 text-[#656A62]">Curadoria e áreas de atuação descritas de forma conceitual para um portfólio demonstrativo. A marca e seus imóveis são fictícios.</p><Link href="/imoveis" className="group inline-flex items-center gap-7 border-b border-[#171C1A] pb-3 text-xs uppercase tracking-[0.18em] hover:text-[#866A45] focus-visible:outline-2 focus-visible:outline-offset-4"><span>Explorar a coleção</span><span aria-hidden="true" className="transition-transform group-hover:translate-x-1">↗</span></Link></div>
         </div>
       </section>
-
-            <footer
+      <footer
         id="contato"
-        className="bg-[#171C1A] px-6 py-16 text-white lg:px-10"
+        data-aurea-version="v10.6"
+        className="aurea-signature-footer relative isolate overflow-hidden bg-[#14251F] text-[#F6F0E6]"
       >
-        <div className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-8">
-          <div>
-            <p className="font-serif text-4xl tracking-[0.2em]">
-              AUREA
-            </p>
-            <p className="mt-2 text-[10px] tracking-[0.3em] text-white/50">
-              RESIDENCES
-            </p>
+        <div aria-hidden="true" className="aurea-signature-footer-glow pointer-events-none absolute inset-0 -z-10" />
+        <div className="mx-auto max-w-7xl px-6 pb-10 pt-20 lg:px-10 lg:pt-28">
+          <div className="grid gap-12 border-b border-white/20 pb-16 lg:grid-cols-12 lg:gap-14">
+            <div data-reveal className="lg:col-span-7">
+              <p className="text-xs uppercase tracking-[0.3em] text-[#D8BE92]">
+                AUREA / Próximos capítulos
+              </p>
+              <h2 className="mt-7 max-w-3xl font-serif text-5xl leading-[1.08] md:text-7xl">
+                Toda história merece
+                <span className="block italic text-[#D5BE96]">um lugar para acontecer.</span>
+              </h2>
+              <p className="mt-7 max-w-lg text-sm leading-8 text-white/65 md:text-base">
+                Descubra arquiteturas singulares, salve suas favoritas e compare
+                possibilidades dentro da coleção AUREA.
+              </p>
+              <Link
+                href="/imoveis"
+                className="aurea-footer-cta group mt-10 inline-flex items-center justify-between gap-12 border border-[#C5AE86] px-7 py-5 text-xs uppercase tracking-[0.19em] text-[#F5E5C9] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5E5C9]"
+              >
+                Explorar a coleção
+                <span aria-hidden="true" className="text-lg transition-transform duration-300 group-hover:translate-x-1">↗</span>
+              </Link>
+            </div>
+
+            <div className="grid gap-12 sm:grid-cols-2 lg:col-span-5 lg:pt-10">
+              <nav aria-label="Navegação do rodapé">
+                <p className="mb-7 text-xs uppercase tracking-[0.25em] text-[#D8BE92]">Descubra</p>
+                <ul className="space-y-5 text-sm text-white/75">
+                  <li><Link className="aurea-footer-link" href="#sobre">Nossa essência</Link></li>
+                  <li><Link className="aurea-footer-link" href="#viver-aurea">Viver AUREA</Link></li>
+                  <li><Link className="aurea-footer-link" href="#colecao">A coleção</Link></li>
+                  <li><Link className="aurea-footer-link" href="#curadoria-aurea">Curadoria</Link></li>
+                </ul>
+              </nav>
+              <nav aria-label="Ferramentas do catálogo">
+                <p className="mb-7 text-xs uppercase tracking-[0.25em] text-[#D8BE92]">Explore</p>
+                <ul className="space-y-5 text-sm text-white/75">
+                  <li><Link className="aurea-footer-link" href="/imoveis">Todos os imóveis</Link></li>
+                  <li><Link className="aurea-footer-link" href="/imoveis">Favoritos no catálogo</Link></li>
+                  <li><Link className="aurea-footer-link" href="/comparar">Comparar imóveis</Link></li>
+                  <li><Link className="aurea-footer-link" href="#lancamento">Novo lançamento</Link></li>
+                </ul>
+              </nav>
+            </div>
           </div>
 
-          <div className="max-w-sm text-sm leading-7 text-white/60">
-            Projeto demonstrativo de portfólio.
-            Marca, propriedades e valores inteiramente fictícios.
+          <div className="relative overflow-hidden border-b border-white/15 py-12 md:py-16">
+            <p className="aurea-footer-wordmark pointer-events-none select-none text-center font-serif leading-none tracking-[0.1em] text-white/[0.09]" aria-hidden="true">AUREA</p>
+            <div className="relative mt-4 flex flex-wrap items-center justify-between gap-4 text-[10px] uppercase tracking-[0.22em] text-[#D5BE96]">
+              <span>Residences / Private Collection</span>
+              <a className="aurea-footer-link" href="#inicio" aria-label="Voltar ao inicio da pagina">Voltar ao início ↑</a>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 pt-7 text-xs leading-6 text-white/55 md:flex-row md:items-center md:justify-between">
+            <p>© AUREA Residences — Projeto conceitual de portfólio.</p>
+            <p className="max-w-xl md:text-right">Marca, imóveis, valores, equipe e narrativas são fictícios. Este site não realiza transações imobiliárias.</p>
           </div>
         </div>
       </footer>
