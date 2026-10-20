@@ -216,7 +216,47 @@ export default function Home() {
         </div>
       </section>
 
-      <section
+            <section id="viver-aurea" aria-labelledby="viver-aurea-titulo" className="bg-[#F3F0E9] text-[#171C1A]">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <div className="mb-14 grid items-end gap-6 lg:grid-cols-12">
+            <div className="lg:col-span-8">
+              <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#947C58]">A vida acontece aqui / AUREA</p>
+              <h2 id="viver-aurea-titulo" className="max-w-4xl font-serif text-5xl leading-[1.09] md:text-7xl">
+                Os melhores lugares guardam <em className="text-[#927B5C]">histórias.</em>
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm leading-8 text-[#666B65] lg:col-span-4">
+              Uma casa vai além da arquitetura. É o espaço das descobertas, dos afetos, dos encontros e das tradições que levamos conosco.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-12 lg:gap-7">
+            {[
+              { id: "01", src: "/brand/aurea/viver/infancia-piscina.webp", title: "Liberdade para crescer", subtitle: "Infância, natureza e brincadeiras sem hora para acabar.", span: "lg:col-span-7", aspect: "aspect-[5/4]" },
+              { id: "02", src: "/brand/aurea/viver/afetos-cafe.webp", title: "A beleza dos pequenos gestos", subtitle: "O cuidado que transforma manhãs comuns em lembranças.", span: "lg:col-span-5", aspect: "aspect-[5/4]" },
+              { id: "03", src: "/brand/aurea/viver/encontros-festa.webp", title: "Celebrar estar junto", subtitle: "As amizades que fazem da sala o melhor lugar da casa.", span: "lg:col-span-5", aspect: "aspect-[5/4]" },
+              { id: "04", src: "/brand/aurea/viver/jantar-familia.webp", title: "Sempre há lugar à mesa", subtitle: "Receitas, histórias e encontros entre gerações.", span: "lg:col-span-7", aspect: "aspect-[5/4]" },
+            ].map((momento) => (
+              <article key={momento.id} className={`group min-w-0 ${momento.span}`}>
+                <div className={`relative overflow-hidden bg-[#D8D2C7] ${momento.aspect}`}>
+                  <Image src={momento.src} alt={momento.subtitle} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 60vw" className="object-cover transition-transform duration-700 motion-reduce:transition-none group-hover:scale-[1.035]" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <span className="absolute left-5 top-5 border border-white/60 bg-[#F5F2EC]/95 px-4 py-2 text-[10px] tracking-[0.19em] text-[#171C1A]">MOMENTO {momento.id}</span>
+                </div>
+                <div className="mt-5 border-b border-[#171C1A]/15 pb-7">
+                  <h3 className="font-serif text-2xl md:text-3xl">{momento.title}</h3>
+                  <p className="mt-2 max-w-md text-sm leading-7 text-[#666B65]">{momento.subtitle}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mt-14 flex flex-wrap items-center justify-between gap-6">
+            <p className="max-w-lg text-xs leading-6 text-[#77786F]">Cenas e personagens ilustrativos criados para o projeto conceitual AUREA. Não representam clientes ou propriedades reais.</p>
+            <Link href="/imoveis" className="inline-flex items-center gap-8 border-b border-[#171C1A] pb-3 text-xs uppercase tracking-[0.18em] transition hover:text-[#92744F]">Descobrir espaços para viver <span aria-hidden="true">↗</span></Link>
+          </div>
+        </div>
+      </section>
+
+<section
         id="colecao"
         className="relative isolate overflow-hidden bg-[#F6F1E8] px-6 py-24 lg:px-10 lg:py-32"
       >
@@ -391,6 +431,193 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section
+        id="pessoas-experiencias"
+        className="overflow-hidden bg-[#171C1A] text-[#F5F2EC]"
+      >
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <div className="grid items-end gap-10 border-b border-white/20 pb-14 lg:grid-cols-12">
+            <div className="lg:col-span-8">
+              <p className="mb-7 text-xs uppercase tracking-[0.3em] text-[#C5AE86]">
+                Pessoas &amp; experiências / AUREA
+              </p>
+              <h2 className="font-serif text-5xl leading-[1.08] md:text-7xl">
+                O olhar que transforma
+                <span className="block italic text-[#C5AE86]"> espaços em histórias.</span>
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm leading-8 text-white/65 lg:col-span-4">
+              Uma marca imaginada a partir de encontros: entre arquitetura,
+              identidade, paisagem e pessoas.
+            </p>
+          </div>
+
+          <div className="grid gap-8 pt-12 lg:grid-cols-12">
+            <div className="relative min-h-[390px] overflow-hidden lg:col-span-7 lg:min-h-[590px]">
+              <Image
+                src="/imoveis/villa-serra-dourada/entrada-varanda.webp"
+                alt="Arquitetura da Villa Serra Dourada, imagem do acervo conceitual AUREA"
+                fill
+                sizes="(max-width: 1024px) 100vw, 58vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 p-8 md:p-12">
+                <p className="text-xs uppercase tracking-[0.3em] text-[#E4D2B1]">
+                  A arte da curadoria
+                </p>
+                <p className="mt-4 max-w-md font-serif text-3xl leading-snug md:text-4xl">
+                  Cada escolha começa com uma forma de enxergar.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-between border border-white/20 p-8 md:p-12 lg:col-span-5">
+              <div>
+                <p className="text-xs uppercase tracking-[0.27em] text-[#C5AE86]">
+                  Equipe conceitual
+                </p>
+                <h3 className="mt-7 font-serif text-4xl leading-tight">
+                  Diferentes talentos. Uma visão singular.
+                </h3>
+                <p className="mt-6 text-sm leading-8 text-white/65">
+                  Para demonstrar como uma marca imobiliária premium poderia
+                  se apresentar, imaginamos duas frentes complementares de atuação.
+                </p>
+              </div>
+              <div className="mt-10 space-y-0">
+                <div className="border-t border-white/20 py-7">
+                  <p className="mb-2 text-[11px] uppercase tracking-[0.2em] text-[#C5AE86]">01 / Direção de curadoria</p>
+                  <p className="font-serif text-2xl">Arquitetura &amp; identidade</p>
+                  <p className="mt-3 text-sm leading-7 text-white/60">
+                    Seleção de espaços com personalidade, contexto e valor estético.
+                  </p>
+                </div>
+                <div className="border-t border-white/20 py-7">
+                  <p className="mb-2 text-[11px] uppercase tracking-[0.2em] text-[#C5AE86]">02 / Experiência residencial</p>
+                  <p className="font-serif text-2xl">Escuta &amp; descoberta</p>
+                  <p className="mt-3 text-sm leading-7 text-white/60">
+                    Uma jornada pensada para explorar possibilidades com clareza.
+                  </p>
+                </div>
+              </div>
+              <p className="border-t border-white/20 pt-5 text-xs leading-6 text-white/50">
+                Funções ilustrativas de uma equipe fictícia. Não representam profissionais reais.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="historias-de-viver"
+        className="bg-[#F2ECE2] px-6 py-24 text-[#171C1A] lg:px-10 lg:py-32"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-wrap items-end justify-between gap-8">
+            <div>
+              <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#92744F]">
+                Histórias de viver / Exemplos narrativos
+              </p>
+              <h2 className="max-w-3xl font-serif text-5xl leading-tight md:text-6xl">
+                A casa certa é aquela que faz sentido para você.
+              </h2>
+            </div>
+            <p className="max-w-xs text-sm leading-7 text-[#6B6A62]">
+              Três perspectivas imaginadas para ilustrar necessidades
+              distintas de quem procura um novo lugar.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                categoria: "01 / Refúgio",
+                titulo: "Uma vida mais perto da natureza",
+                texto: "Procurar silêncio, verde e tempo para estar junto pode mudar completamente o significado de morar.",
+                origem: "Cenário ilustrativo / Serra",
+              },
+              {
+                categoria: "02 / Movimento",
+                titulo: "A cidade como extensão de casa",
+                texto: "Para algumas pessoas, morar bem é ter cultura, encontros e possibilidades a poucos passos.",
+                origem: "Cenário ilustrativo / Cidade",
+              },
+              {
+                categoria: "03 / Pertencimento",
+                titulo: "Um espaço que traduz identidade",
+                texto: "Materiais, luz e memória afetiva transformam arquitetura em uma experiência profundamente pessoal.",
+                origem: "Cenário ilustrativo / Brasilidades",
+              },
+            ].map((historia) => (
+              <article
+                key={historia.categoria}
+                className="flex min-h-[330px] flex-col justify-between border border-[#171C1A]/15 bg-[#F9F6F0] p-8 transition-colors duration-300 hover:bg-white md:p-10"
+              >
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-[#92744F]">
+                    {historia.categoria}
+                  </p>
+                  <h3 className="mt-9 font-serif text-3xl leading-snug">
+                    {historia.titulo}
+                  </h3>
+                  <p className="mt-6 text-sm leading-8 text-[#666B65]">
+                    {historia.texto}
+                  </p>
+                </div>
+                <p className="mt-12 border-t border-[#171C1A]/15 pt-5 text-[11px] uppercase tracking-[0.16em] text-[#8A8174]">
+                  {historia.origem}
+                </p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-6 text-xs leading-6 text-[#746E64]">
+            Conteúdo demonstrativo e fictício. Estes relatos são cenários criativos,
+            não depoimentos ou avaliações de clientes reais.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-[#E6E0D5] px-6 py-24 text-[#171C1A] lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-7">
+              <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[#92744F]">
+                Uma jornada, muitas possibilidades
+              </p>
+              <h2 className="font-serif text-5xl leading-tight md:text-6xl">
+                Sua próxima história começa com uma descoberta.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm leading-8 text-[#686D65] lg:col-span-5 lg:justify-self-end">
+              Explore os imóveis, selecione seus favoritos e compare
+              alternativas usando as ferramentas do catálogo AUREA.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 border-t border-[#171C1A]/20 pt-10 md:grid-cols-3">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#92744F]">01 / Descobrir</p>
+              <h3 className="mt-5 font-serif text-3xl">Explore a coleção</h3>
+              <p className="mt-4 text-sm leading-7 text-[#686D65]">Encontre residências por características e estilo de vida.</p>
+              <Link href="/imoveis" className="mt-7 inline-flex gap-4 border-b border-[#171C1A] pb-2 text-xs uppercase tracking-[0.14em] hover:text-[#92744F]">Ver imóveis <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#92744F]">02 / Selecionar</p>
+              <h3 className="mt-5 font-serif text-3xl">Encontre afinidades</h3>
+              <p className="mt-4 text-sm leading-7 text-[#686D65]">Salve seus favoritos no catálogo para revisitá-los depois.</p>
+              <Link href="/imoveis" className="mt-7 inline-flex gap-4 border-b border-[#171C1A] pb-2 text-xs uppercase tracking-[0.14em] hover:text-[#92744F]">Selecionar favoritos <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#92744F]">03 / Comparar</p>
+              <h3 className="mt-5 font-serif text-3xl">Escolha com clareza</h3>
+              <p className="mt-4 text-sm leading-7 text-[#686D65]">Compare até três propriedades lado a lado.</p>
+              <Link href="/comparar" className="mt-7 inline-flex gap-4 border-b border-[#171C1A] pb-2 text-xs uppercase tracking-[0.14em] hover:text-[#92744F]">Abrir comparador <span aria-hidden="true">↗</span></Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer
         id="contato"
         className="bg-[#171C1A] px-6 py-16 text-white lg:px-10"
