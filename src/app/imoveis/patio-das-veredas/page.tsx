@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   title: "Pátio das Veredas | Novo Lançamento | AUREA Residences",
   description:
     "Conheça o conceito fictício Pátio das Veredas: apartamento de alto luxo com 325 m², quatro suítes e arquitetura brasileira em Vespasiano, MG.",
+
+  openGraph: {
+    type: "website",
+    images: [{ url: "/imoveis/patio-das-veredas/fachada.webp", alt: "patio das veredas — AUREA Residences" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/imoveis/patio-das-veredas/fachada.webp"],
+  },
 };
 
 const base = "/imoveis/patio-das-veredas";

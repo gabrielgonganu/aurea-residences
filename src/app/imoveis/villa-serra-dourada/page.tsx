@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   title: "Villa Serra Dourada | AUREA Residences",
   description:
     "Conheça o conceito da Villa Serra Dourada, residência contemporânea de alto padrão em Nova Lima, Minas Gerais.",
+
+  openGraph: {
+    type: "website",
+    images: [{ url: "/imoveis/villa-serra-dourada/entrada-varanda.webp", alt: "villa serra dourada — AUREA Residences" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/imoveis/villa-serra-dourada/entrada-varanda.webp"],
+  },
 };
 
 const base = "/imoveis/villa-serra-dourada";

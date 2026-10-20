@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   title: "Reserva das Acácias | AUREA Residences",
   description:
     "Conheça o conceito fictício Reserva das Acácias: um refúgio de campo com arquitetura brasileira, piscina natural e paisagem serrana em Brumadinho.",
+
+  openGraph: {
+    type: "website",
+    images: [{ url: "/imoveis/reserva-das-acacias/fachada.webp", alt: "reserva das acacias — AUREA Residences" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/imoveis/reserva-das-acacias/fachada.webp"],
+  },
 };
 
 const base = "/imoveis/reserva-das-acacias";

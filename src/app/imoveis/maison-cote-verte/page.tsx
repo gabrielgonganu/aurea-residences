@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   title: "Maison Côte Verte | AUREA Residences",
   description:
     "Maison Côte Verte: conceito fictício de residência de praia brasileira de alto padrão em Vitória, Espírito Santo.",
+
+  openGraph: {
+    type: "website",
+    images: [{ url: "/imoveis/maison-cote-verte/fachada.webp", alt: "maison cote verte — AUREA Residences" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/imoveis/maison-cote-verte/fachada.webp"],
+  },
 };
 
 const base = "/imoveis/maison-cote-verte";

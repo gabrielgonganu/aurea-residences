@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   title: "Casa Lagoa Prime | AUREA Residences",
   description:
     "Conheça a Casa Lagoa Prime, residência fictícia de arquitetura contemporânea tropical em Lagoa Santa, Minas Gerais.",
+
+  openGraph: {
+    type: "website",
+    images: [{ url: "/imoveis/casa-lagoa-prime/fachada.webp", alt: "casa lagoa prime — AUREA Residences" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/imoveis/casa-lagoa-prime/fachada.webp"],
+  },
 };
 
 const base = "/imoveis/casa-lagoa-prime";

@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   title: "Penthouse Mirante do Vale | AUREA Residences",
   description:
     "Cobertura fictícia de alto padrão em Belo Horizonte. Conheça a Penthouse Mirante do Vale e sua arquitetura urbana.",
+
+  openGraph: {
+    type: "website",
+    images: [{ url: "/imoveis/penthouse-mirante-do-vale/fachada.webp", alt: "penthouse mirante do vale — AUREA Residences" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/imoveis/penthouse-mirante-do-vale/fachada.webp"],
+  },
 };
 
 const base = "/imoveis/penthouse-mirante-do-vale";
