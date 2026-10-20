@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const links = [
   { nome: "Início", href: "/" },
@@ -15,6 +15,7 @@ const links = [
 export default function CabecalhoAurea() {
   const pathname = usePathname();
   const [aberto, setAberto] = useState(false);
+  const botaoMenuRef = useRef<HTMLButtonElement>(null);
   const naHome = pathname === "/";
 
   return (
@@ -27,6 +28,13 @@ export default function CabecalhoAurea() {
     >
       <nav
         aria-label="Navegação principal"
+        onKeyDown={(evento) => {
+          if (evento.key === "Escape" && aberto) {
+            evento.preventDefault();
+            setAberto(false);
+            botaoMenuRef.current?.focus();
+          }
+        }}
         className="relative mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-10"
       >
         <Link
@@ -63,6 +71,7 @@ export default function CabecalhoAurea() {
         </div>
 
         <button
+          ref={botaoMenuRef}
           type="button"
           onClick={() => setAberto(!aberto)}
           aria-label={aberto ? "Fechar menu" : "Abrir menu"}

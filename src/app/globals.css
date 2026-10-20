@@ -423,3 +423,20 @@ body {
     transform: none !important;
   }
 }
+
+/* AUREA V10.7 / ACESSIBILIDADE — foco de teclado perceptivel */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid #b58a4a;
+  outline-offset: 3px;
+}
+.aurea-lightbox :where(button):focus-visible,
+.aurea-contact-panel-head :where(button):focus-visible,
+.aurea-contact-trigger:focus-visible,
+header :where(a, button):focus-visible {
+  outline-color: #e4c995;
+}
+@media (prefers-reduced-motion: reduce) {
+  :where(a, button, input, select, textarea):focus-visible {
+    scroll-behavior: auto;
+  }
+}

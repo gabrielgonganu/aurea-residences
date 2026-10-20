@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 type PainelAtendimentoProps = {
   nomeImovel?: string;
@@ -15,6 +15,24 @@ export default function PainelAtendimento({
   const [enviado, setEnviado] = useState(false);
   const id = useId();
   const painelId = `${id}-painel`;
+  const fecharPainelRef = useRef<HTMLButtonElement>(null);
+  const abrirPainelRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!aberto) return;
+    fecharPainelRef.current?.focus();
+    const fecharComEscape = (evento: KeyboardEvent) => {
+      if (evento.key === "Escape") {
+        evento.preventDefault();
+        setAberto(false);
+      }
+    };
+    window.addEventListener("keydown", fecharComEscape);
+    return () => {
+      window.removeEventListener("keydown", fecharComEscape);
+      abrirPainelRef.current?.focus();
+    };
+  }, [aberto]);
 
   const precoFormatado = new Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -40,6 +58,7 @@ export default function PainelAtendimento({
             </div>
 
             <button
+              ref={fecharPainelRef}
               type="button"
               onClick={() => setAberto(false)}
               aria-label="Fechar painel de atendimento"
@@ -143,6 +162,7 @@ export default function PainelAtendimento({
       )}
 
       <button
+        ref={abrirPainelRef}
         type="button"
         aria-expanded={aberto}
         aria-controls={painelId}
